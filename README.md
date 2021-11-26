@@ -2,6 +2,8 @@
 <div align="center">   
 
 # Dynamic Head: Unifying Object Detection Heads with Attentions
+## Note: This is just a fork of the original repository. All the rights are reserved by Microsoft Inc.
+
 </div>
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/dynamic-head-unifying-object-detection-heads/object-detection-on-coco-minival)](https://paperswithcode.com/sota/object-detection-on-coco-minival?p=dynamic-head-unifying-object-detection-heads)
