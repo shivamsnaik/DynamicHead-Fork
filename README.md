@@ -49,6 +49,14 @@ We notice better performances on some models compared to original paper.
 ```
 python -m pip install -e DynamicHead
 ```
+**Issues:**
+1. Few issues related to missing packages arise. In order to fix them, kindly install the following packages in order:
+
+    1. [Detectron2](https://anaconda.org/conda-forge/detectron2)
+    2. [Timm](https://anaconda.org/conda-forge/timm) 
+    3. [Pytorch and Cuda Toolkit (xx.x denotes version that matches installed nvidia driver version)](https://pytorch.org/get-started/locally/)
+        1. ```conda install pytorch torchvision torchaudio cudatoolkit=xx.x -c pytorch```
+    5. [IoPath](https://anaconda.org/iopath/iopath)
 
 **Train:**
 
