@@ -1,6 +1,11 @@
 // Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
 #include "deform_conv.h"
 #include "SigmoidFocalLoss.h"
+#include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
+#include <vector>
+
+namespace py=pybind11;
 
 PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
   m.def("deform_conv_forward", &deform_conv_forward, "deform_conv_forward");

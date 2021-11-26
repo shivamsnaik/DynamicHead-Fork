@@ -3,7 +3,7 @@
 #ifdef WITH_CUDA
 #include "cuda/vision.h"
 #endif
-
+#include <ATen/ATen.h>
 
 // Interface for Python
 int deform_conv_forward(
