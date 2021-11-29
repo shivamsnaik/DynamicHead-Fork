@@ -2,7 +2,8 @@
 <div align="center">   
 
 # Dynamic Head: Unifying Object Detection Heads with Attentions
-## Note: This is just a fork of the original repository. All the rights are reserved by Microsoft Inc.
+## Note: This is just a fork of the original repository. All the rights are reserved by Microsoft Inc. 
+    Missing headers were included in the config files to avoid errors while compiling the code.
 
 </div>
 
