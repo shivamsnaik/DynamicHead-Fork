@@ -30,7 +30,7 @@ from detectron2.solver.build import maybe_add_gradient_clipping
 from detectron2.utils.logger import setup_logger
 from detectron2.data.datasets import register_coco_instances
 
-register_coco_instances("my_dataset_train", {}, "/home/shivamsnaik/Nextcloud/ACADEMICS/UNI-PROJECT-SEMINAR/PROJECT/CODE-FILES/DocBank_to_COCO/output.json", "/media/shivamsnaik/Windows-SSD/DATASET/DocBank/DocBank_samples/DocBank_samples/")
+register_coco_instances("my_dataset_train", {}, "output.json", "dataset/images/")
 
 from dyhead import add_dyhead_config
 from extra import add_extra_config
