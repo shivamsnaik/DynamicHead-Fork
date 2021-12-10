@@ -28,6 +28,9 @@ from detectron2.engine import SimpleTrainer, DefaultTrainer, default_argument_pa
 from detectron2.evaluation import COCOEvaluator, verify_results
 from detectron2.solver.build import maybe_add_gradient_clipping
 from detectron2.utils.logger import setup_logger
+from detectron2.data.datasets import register_coco_instances
+
+register_coco_instances("my_dataset_train", {}, "/home/shivamsnaik/Nextcloud/ACADEMICS/UNI-PROJECT-SEMINAR/PROJECT/CODE-FILES/DocBank_to_COCO/output.json", "/media/shivamsnaik/Windows-SSD/DATASET/DocBank/DocBank_samples/DocBank_samples/")
 
 from dyhead import add_dyhead_config
 from extra import add_extra_config
@@ -87,6 +90,7 @@ class Trainer(DefaultTrainer):
 
     @classmethod
     def build_train_loader(cls, cfg):
+        print(cfg.DATASETS.TRAIN)
         dataset = get_detection_dataset_dicts(
             cfg.DATASETS.TRAIN,
             filter_empty=cfg.DATALOADER.FILTER_EMPTY_ANNOTATIONS,
