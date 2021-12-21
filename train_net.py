@@ -30,11 +30,10 @@ from detectron2.solver.build import maybe_add_gradient_clipping
 from detectron2.utils.logger import setup_logger
 from detectron2.data.datasets import register_coco_instances
 
-register_coco_instances("my_dataset_train", {}, "output.json", "dataset/images/")
+register_coco_instances("coco_docbank_train", {}, "output.json", "dataset/images/")
 
 from dyhead import add_dyhead_config
 from extra import add_extra_config
-
 
 class Trainer(DefaultTrainer):
     """
@@ -177,6 +176,10 @@ def setup(args):
     add_extra_config(cfg)
     cfg.merge_from_file(args.config_file)
     cfg.merge_from_list(args.opts)
+    cfg.DATASETS.TRAIN = ('coco_docbank_train',)
+    cfg.MODEL.ROI_HEADS.NUM_CLASSES = 13
+    cfg.SOLVER.IMS_PER_BATCH = 2
+    cfg.SOLVER.WEIGHT_DECAY_BIAS = 0.0001
     cfg.freeze()
     default_setup(cfg, args)
     return cfg
