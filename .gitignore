@@ -1,3 +1,9 @@
+# Outputs
+output.json
+output/
+requirements.txt
+CONDA_REQUIREMENTS_INSTALL_SCRIPT.sh
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
