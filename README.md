@@ -67,6 +67,22 @@ To train a config on a single node with 8 gpus, simply use:
 DETECTRON2_DATASETS=$DATASET python train_net.py --config configs/dyhead_r50_retina_fpn_1x.yaml --num-gpus 8
 ```
 
+Environment details of the system on which the model is tested:
+
+|  Package Name  |   Package Details  |
+|:--------------:|:------------------:|
+|sys.platform    | linux              |
+|Python          | 3.8.12             |
+|numpy           | 1.21.2             |
+|detectron2      | 0.6                |
+|CUDA            | 11.4               |
+|PyTorch         | 1.10.0             |
+|torchvision     | 0.11.0a0           |
+|fvcore          | 0.1.5.post20211023 |
+|iopath          | 0.1.9    `         |
+|cv2             | 4.5.4              |
+
+
 **Test:**
 
 To test a config with a weight on a single node with 8 gpus, simply use:
