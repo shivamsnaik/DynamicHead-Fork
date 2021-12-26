@@ -75,6 +75,7 @@ class DYReLU(nn.Module):
         else:
             self.spa = None
 
+    # Task Aware Attention Mechanism
     def forward(self, x):
         if isinstance(x, list):
             x_in = x[0]
@@ -83,6 +84,7 @@ class DYReLU(nn.Module):
             x_in = x
             x_out = x
         b, c, h, w = x_in.size()
+        # Global average pooling to reduce dimensionality for LxS
         y = self.avg_pool(x_in).view(b, c)
         y = self.fc(y).view(b, self.oup * self.exp, 1, 1)
         if self.exp == 4:

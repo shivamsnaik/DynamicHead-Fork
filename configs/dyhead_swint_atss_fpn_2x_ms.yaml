@@ -6,6 +6,15 @@ MODEL:
   BACKBONE:
     NAME: "build_retinanet_swint_fpn_dyhead_backbone"
   SWINT:
+    EMBED_DIM: 96
+    DEPTHS: [2, 2, 6, 2]
+    NUM_HEADS: [3, 6, 12, 24]
+    WINDOW_SIZE: 7
+    MLP_RATIO: 4.
+    DROPOUT_RATE: 0.2
+    ATTN_DROP_RATE: 0.
+    DROP_PATH_RATE: 0.2
+    APE: False
     OUT_FEATURES: ["stage3", "stage4", "stage5"]
   FPN:
     IN_FEATURES: ["stage3", "stage4", "stage5"]

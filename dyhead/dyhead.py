@@ -20,7 +20,7 @@ class Conv3x3Norm(torch.nn.Module):
         x = self.bn(x)
         return x
 
-
+# Scale Aware Attention Mechanism
 class DyConv(nn.Module):
     def __init__(self, in_channels=256, out_channels=256, conv_func=Conv3x3Norm):
         super(DyConv, self).__init__()
@@ -30,11 +30,13 @@ class DyConv(nn.Module):
         self.DyConv.append(conv_func(in_channels, out_channels, 1))
         self.DyConv.append(conv_func(in_channels, out_channels, 2))
 
+        
         self.AttnConv = nn.Sequential(
             nn.AdaptiveAvgPool2d(1),
             nn.Conv2d(in_channels, 1, kernel_size=1),
             nn.ReLU(inplace=True))
 
+        # Hard Sigmoid Function
         self.h_sigmoid = h_sigmoid()
         self.relu = DYReLU(in_channels, out_channels)
         self.offset = nn.Conv2d(in_channels, 27, kernel_size=3, stride=1, padding=1)
@@ -83,7 +85,7 @@ class DyConv(nn.Module):
 
         return next_x
 
-
+# Backbone Abstract base class for network backbones.
 class DyHead(Backbone):
     def __init__(self, cfg, backbone):
         super(DyHead, self).__init__()
