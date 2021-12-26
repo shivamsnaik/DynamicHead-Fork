@@ -4,8 +4,11 @@ MODEL:
   MASK_ON: True
   PIXEL_MEAN: [123.675, 116.28, 103.53]
   PIXEL_STD: [58.395, 57.12, 57.375]
+  RESNETS:
+    DEPTH: 50
+    OUT_FEATURES: ["res2", "res3", "res4", "res5"]
   BACKBONE:
-    NAME: "build_retinanet_swint_fpn_dyhead_backbone"
+    NAME: "build_swint_fpn_dyhead_backbone"
   SWINT:
     EMBED_DIM: 96
     DEPTHS: [2, 2, 6, 2]
@@ -16,9 +19,9 @@ MODEL:
     ATTN_DROP_RATE: 0.
     DROP_PATH_RATE: 0.2
     APE: False
-    OUT_FEATURES: ["stage3", "stage4", "stage5"]
+    OUT_FEATURES: ["stage2", "stage3", "stage4", "stage5"]
   FPN:
-    IN_FEATURES: ["stage3", "stage4", "stage5"]
+    IN_FEATURES: ["stage2", "stage3", "stage4", "stage5"]
   DYHEAD:
     NUM_CONVS: 6
     CHANNELS: 256
