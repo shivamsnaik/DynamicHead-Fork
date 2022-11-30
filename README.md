@@ -53,8 +53,9 @@ python -m pip install -e DynamicHead
 **Issues:**
 1. Few issues related to missing packages arise. In order to fix them, kindly install the following packages in order:
 
-    1. [Detectron2](python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html)
-        1. ```The above installation is for cuda 11.3 and pytorch 1.10 versions. Check out Detectron2 website for compatible version.```    
+    1. [Detectron2](https://detectron2.readthedocs.io/en/latest/)
+        1. ```python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html```
+        2. The above installation is for cuda 11.3 and pytorch 1.10 versions. Check out Detectron2 website for compatible version.  
     3. [Timm](https://anaconda.org/conda-forge/timm) 
     4. [Pytorch and Cuda Toolkit (xx.x denotes version that matches installed nvidia driver version)](https://pytorch.org/get-started/locally/)
         1. ```conda install pytorch torchvision torchaudio cudatoolkit=xx.x -c pytorch```
